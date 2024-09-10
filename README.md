@@ -1,6 +1,6 @@
 # Klontong, the Mobile Project
 
-A new Flutter project.
+A small convenience store wants to enter the 21st century by selling their products online.
 
 ## Getting Started
 ### Basic Overview:
