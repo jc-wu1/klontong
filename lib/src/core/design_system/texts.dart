@@ -86,11 +86,11 @@ TextStyle body2Light = TextStyle(
   fontSize: 14.0,
   height: 19.6.lh(14),
 );
-TextStyle body2Regular = TextStyle(
+const TextStyle body2Regular = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w400,
   fontSize: 14.0,
-  height: 19.6.lh(14),
+  // height: 19.6.lh(14),
 );
 TextStyle body2Medium = TextStyle(
   color: Colors.black,
