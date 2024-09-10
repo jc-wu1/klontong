@@ -68,16 +68,16 @@ To ensure your environment is properly set up, below is an example output from `
    git clone https://github.com/jc-wu1/klontong.git
    ```
 2. **Install Dependencies**
-	Run the following command to get all the dependencies:
-	```bash 
-	flutter pub get
-	```
+   Run the following command to get all the dependencies:
+   ```bash
+   flutter pub get
+   ```
 ### Running the Project
 1. **Connect a device**
-	Ensure you have an emulator running or a physical device connected.
-2. **Run the Project**
-	Use the following command to run the app:
-	```bash
-	flutter run
-	```
-	This will build and launch the application on the connected device or emulator.
+   Ensure you have an emulator running or a physical device connected.
+3. **Run the Project**
+   Use the following command to run the app:
+   ```bash
+   flutter run
+   ```
+   This will build and launch the application on the connected device or emulator.
