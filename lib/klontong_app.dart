@@ -9,6 +9,7 @@ class KlontongApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Klontong Mobile Apps',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
