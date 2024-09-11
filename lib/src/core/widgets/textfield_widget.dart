@@ -25,8 +25,8 @@ class MyTextField extends StatelessWidget {
     this.initialValue,
     this.readOnly = false,
     this.useBorder = true,
-    this.textStyle = body2Regular,
   });
+
   final TextInputAction? textInputAction;
   final TextEditingController? controller;
   final GestureTapCallback? onTap;
@@ -46,7 +46,6 @@ class MyTextField extends StatelessWidget {
   final String? initialValue;
   final bool readOnly;
   final String? errorText;
-  final TextStyle? textStyle;
   final bool useBorder;
 
   @override
@@ -73,7 +72,7 @@ class MyTextField extends StatelessWidget {
         border: (useBorder)
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: whiteColor40),
+                borderSide: const BorderSide(color: whiteColor60),
               )
             : InputBorder.none,
         errorText: errorText,
@@ -82,12 +81,12 @@ class MyTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: whiteColor40),
+          borderSide: const BorderSide(color: whiteColor60),
         ),
         focusedBorder: (useBorder)
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: whiteColor40),
+                borderSide: const BorderSide(color: whiteColor60),
               )
             : null,
         contentPadding: const EdgeInsets.all(8),
