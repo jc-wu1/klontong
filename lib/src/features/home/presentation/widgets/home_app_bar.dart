@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/design_system/design_system.dart';
 import '../../../../core/widgets/textfield_widget.dart';
@@ -19,9 +20,11 @@ class HomeAppBar extends StatelessWidget {
       elevation: 0.0,
       pinned: true,
       backgroundColor: Colors.white,
-      title: const MyTextField(
-        prefixIcon: Icon(Icons.search),
+      title: MyTextField(
+        prefixIcon: const Icon(Icons.search),
         hint: 'Cari barang disini',
+        onTap: () => context.pushNamed("products"),
+        readOnly: true,
       ),
       flexibleSpace: const FlexibleSpaceBar(
         background: ColoredBox(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/assets/asset_images.dart';
 import '../../../core/design_system/design_system.dart';
@@ -161,9 +162,11 @@ class FlashSaleAppBar extends StatelessWidget {
       elevation: 0.0,
       pinned: true,
       backgroundColor: whiteColor10,
-      title: const MyTextField(
-        prefixIcon: Icon(Icons.search),
+      title: MyTextField(
+        prefixIcon: const Icon(Icons.search),
         hint: 'Cari barang disini',
+        onTap: () => context.pushNamed("products"),
+        readOnly: true,
       ),
       flexibleSpace: const FlexibleSpaceBar(
         background: ColoredBox(

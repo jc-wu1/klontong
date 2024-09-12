@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/design_system/design_system.dart';
 import '../../../../core/widgets/textfield_widget.dart';
+import '../bloc/products_bloc.dart';
 
 class ProductsAppBar extends StatelessWidget {
   const ProductsAppBar({
@@ -14,9 +16,23 @@ class ProductsAppBar extends StatelessWidget {
       elevation: 0.0,
       pinned: true,
       backgroundColor: whiteColor10,
-      title: const MyTextField(
-        prefixIcon: Icon(Icons.search),
-        hint: 'Cari barang disini',
+      title: BlocBuilder<ProductsBloc, ProductsState>(
+        builder: (context, state) {
+          return MyTextField(
+            prefixIcon: const Icon(Icons.search),
+            hint: 'Cari barang disini',
+            onFieldSubmitted: (String query) {
+              if (query != "" && query.isNotEmpty) {
+                BlocProvider.of<ProductsBloc>(context).add(
+                  SearchProduct(
+                    page: state.currentPage,
+                    query: query,
+                  ),
+                );
+              }
+            },
+          );
+        },
       ),
       flexibleSpace: const FlexibleSpaceBar(
         background: ColoredBox(
