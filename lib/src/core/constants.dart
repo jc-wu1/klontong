@@ -1,15 +1,16 @@
 import 'assets/asset_icons.dart';
 import 'assets/asset_images.dart';
 
-const String baseUrl = "";
+const String baseUrl = "https://6627a81cb625bf088c092a6a.mockapi.io/api/v1/";
+const String basePicsum = "https://picsum.photos/";
 const String githubUrl = "https://github.com/jc-wu1";
 
 ///Hardcoded banners
 List<String> banners = [
-  bannerpromo1,
-  bannerpromo2,
-  bannerpromo3,
-  bannerpromo4,
+  imgBannerpromo1,
+  imgBannerpromo2,
+  imgBannerpromo3,
+  imgBannerpromo4,
 ];
 
 ///Hardcoded categories
