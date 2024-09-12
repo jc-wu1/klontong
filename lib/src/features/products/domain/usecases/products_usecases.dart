@@ -1,7 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 
 import '../../../../core/exeptions/network_exceptions.dart';
-import '../entity/product_entity.dart';
 import '../entity/products_entity.dart';
 import '../repository/products_repository.dart';
 
@@ -21,14 +20,6 @@ class ProductsUsecases {
       page: page,
       limit: limit,
       query: query,
-    );
-  }
-
-  Future<Either<NetworkExceptions, ProductEntity>> getProductDetail({
-    required String productId,
-  }) async {
-    return await _repository.getProductDetail(
-      productId: productId,
     );
   }
 }

@@ -48,7 +48,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         );
         products.fold(
           (l) {
-            print(l.errorMessage.toString());
             return emit(
               state.copyWith(
                 status: LoadStatus.failure,
@@ -58,7 +57,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
             );
           },
           (r) {
-            print(r.products!.length.toString());
             return emit(
               state.copyWith(
                 status: LoadStatus.success,
@@ -77,7 +75,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         );
         products.fold(
           (l) {
-            print(l.errorMessage.toString());
             return emit(
               state.copyWith(
                 status: LoadStatus.success,
@@ -89,7 +86,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
             );
           },
           (r) {
-            print(r.products!.length.toString());
             return emit(
               r.products?.isEmpty ?? true
                   ? state.copyWith(
@@ -107,9 +103,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
           },
         );
       }
-    } catch (e, st) {
-      print(e.toString());
-      print(st.toString());
+    } catch (e) {
       return emit(
         state.copyWith(
           status: LoadStatus.failure,
