@@ -2,6 +2,17 @@
 
 A small convenience store wants to enter the 21st century by selling their products online.
 
+## Important!
+1. **Login as admin (to add a new product)**
+   ```
+   username: admin
+   password admin
+   ```
+2. **Login as a user**
+   ```
+   username: usertesting
+   password: usertesting
+   ```
 ## Getting Started
 ### Basic Overview:
 This project is a starting point for a Flutter application.
@@ -84,3 +95,4 @@ To ensure your environment is properly set up, below is an example output from `
    flutter run
    ```
    This will build and launch the application on the connected device or emulator.
+
