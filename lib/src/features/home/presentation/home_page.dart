@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../core/design_system/design_system.dart';
+import '../../products/presentation/flash_sale_page.dart';
+import '../../products/presentation/products_page.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_categories.dart';
 import 'widgets/home_promo_banners.dart';
@@ -74,14 +76,98 @@ class _HomePageState extends State<HomePage> {
                   thickness: 12,
                   color: sketchColor,
                 ),
-                const HomeSection(
+                HomeSection(
                   isFlashSale: true,
                   flashSaleDuration: 23923,
                   title: "Flash Sale",
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.thunderstorm_sharp,
                     color: Colors.amber,
                   ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const FlashSalePage(),
+                      ),
+                    );
+                  },
+                  useSeeAllButton: true,
+                ),
+                ColoredBox(
+                  color: sketchColor,
+                  child: MasonryGridView.builder(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    gridDelegate:
+                        const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => Container(
+                      margin: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: whiteColor50,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Image.network(
+                              imgs[index],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            'Ini produknya sadklsajd ksla jdklsadk ads',
+                            style: caption1Regular,
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Rp20.000',
+                                style: subheadline2Bold,
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.favorite,
+                                  color: errorColor50,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                HomeSection(
+                  isFlashSale: false,
+                  flashSaleDuration: 23923,
+                  title: "Semua Produk",
+                  icon: const Icon(
+                    Icons.align_horizontal_left_sharp,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ProductsPage(),
+                      ),
+                    );
+                  },
                   useSeeAllButton: true,
                 ),
                 MasonryGridView.builder(
@@ -117,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           'Ini produknya sadklsajd ksla jdklsadk ads',
-                          style: caption1Bold,
+                          style: caption1Regular,
                         ),
                         const SizedBox(
                           height: 8,

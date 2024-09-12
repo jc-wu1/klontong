@@ -95,6 +95,7 @@ const whiteColor10 = Color(0xffFFFFFF);
 /// RANDOM COLOR - WHITE
 ///
 const sketchColor = Color(0xffF6F8FB);
+const flashSaleColor = Color(0xffFED700);
 
 ///
 /// NEUTRAL COLOR - DARK
